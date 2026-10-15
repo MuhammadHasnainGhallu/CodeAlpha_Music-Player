@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="player">
+        <h1><i class="fa-solid fa-music"></i> Music Player</h1>
+
+        <div class="cover" id="cover">
+            <i class="fa-solid fa-compact-disc"></i>
+        </div>
+
+        <h2 id="song-title">Loading...</h2>
+        <p id="artist">Music Player</p>
+
+        <audio id="audio" preload="metadata"></audio>
+
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <div class="time">
+            <span id="current-time">0:00</span>
+            <span id="duration">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="shuffle" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+            <button id="prev" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+            <button id="play" class="play-btn" title="Play"><i class="fa-solid fa-play"></i></button>
+            <button id="next" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+            <button id="repeat" title="Repeat"><i class="fa-solid fa-repeat"></i></button>
+        </div>
+
+        <div class="volume-container">
+            <i class="fa-solid fa-volume-low"></i>
+            <input type="range" id="volume" min="0" max="1" step="0.01" value="0.7">
+            <i class="fa-solid fa-volume-high"></i>
+        </div>
+
+        <div class="playlist-header">
+            <h3><i class="fa-solid fa-list"></i> Playlist</h3>
+            <label class="autoplay">
+                <input type="checkbox" id="autoplay" checked>
+                Autoplay
+            </label>
+        </div>
+
+        <ul id="playlist"></ul>
+
+        <label class="upload-btn">
+            <i class="fa-solid fa-folder-open"></i> Add Your Songs
+            <input type="file" id="file-input" accept="audio/*" multiple hidden>
+        </label>
+
+        <p id="status">Select a song to start playing.</p>
+        <p class="footer">Enjoy Your Music</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
